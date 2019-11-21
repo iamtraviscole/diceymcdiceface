@@ -1,3 +1,56 @@
+.stack-container {
+  box-sizing: border-box;
+  margin-bottom: 4px;
+  width: 200px;
+  height: 166px;
+}
+
+.stack-column {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 166px;
+  vertical-align: bottom;
+}
+
+.stack-column-inner-container {
+  position: absolute;
+  bottom: 0;
+}
+
+.stack-die {
+  box-sizing: border-box;
+  margin-top: 4px;
+  width: 30px;
+  height: 30px;
+  border-radius: 1px;
+}
+
+.stack-die-1 {
+  background: #ff595e;
+}
+
+.stack-die-2 {
+  background: #ffCa3a;
+}
+
+.stack-die-3 {
+  background: #8ac926;
+}
+
+.stack-die-4 {
+  background: #1982c4;
+}
+
+.stack-die-5 {
+  background: #6a4c93;
+}
+
+.stack-die-6 {
+  background: #1aebcb;
+}
+
 .die-scene {
   width: 200px;
   height: 200px;
@@ -14,6 +67,7 @@
 }
 
 .die-side {
+  box-sizing: border-box;
   position: absolute;
   width: 200px;
   height: 200px;
