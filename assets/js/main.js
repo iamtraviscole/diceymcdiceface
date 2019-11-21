@@ -22,4 +22,8 @@ $('.roll-button').addEventListener('click', () => {
   let num = randomOneToSix()
   $('.roll-result').innerHTML = 'rolled ' + num
   handleRollCount(num)
+  if (rollCount[num] === 5) {
+    $('.winner').innerHTML = num + ' wins!'
+    $('.roll-button').disabled = true
+  }
 })
