@@ -13,13 +13,17 @@ function reset() {
   $('.roll-button').disabled = false
   $('.roll-result').innerHTML = ''
   $('.winner').innerHTML = ''
-  $('.roll-count-ul').innerHTML = 
+  $('.roll-count-ul').innerHTML =
    `<li>1: <span class="roll-1"></span></li>
     <li>2: <span class="roll-2"></span></li>
     <li>3: <span class="roll-3"></span></li>
     <li>4: <span class="roll-4"></span></li>
     <li>5: <span class="roll-5"></span></li>
     <li>6: <span class="roll-6"></span></li>`
+  let lastClass = $('.die').classList.item(1)
+  if (lastClass) {
+    $('.die').classList.remove(lastClass)
+  }
 
   rollCount = {
     1: 0,
@@ -40,6 +44,15 @@ const handleRollCount = (num) => {
   $(`.roll-${num}`).innerHTML = rollCount[num]
 }
 
+const rollDie = (num) => {
+  let lastClass = $('.die').classList.item(1)
+  if (lastClass) {
+    $('.die').classList.remove(lastClass)
+  }
+
+  $('.die').classList.add(`show-side-${num}`)
+}
+
 $('.roll-button').addEventListener('click', () => {
   let num = randomOneToSix()
   $('.roll-result').innerHTML = 'rolled ' + num
@@ -48,6 +61,7 @@ $('.roll-button').addEventListener('click', () => {
     $('.winner').innerHTML = num + ' wins!'
     $('.roll-button').disabled = true
   }
+  rollDie(num)
 })
 
 $('.reset-button').addEventListener('click', () => {
