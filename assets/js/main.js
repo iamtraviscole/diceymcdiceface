@@ -56,7 +56,7 @@ const rollDie = (num) => {
 
 $('.roll-btn').addEventListener('click', () => {
   let num = randomOneToSix()
-  $('.roll-result').innerHTML = 'rolled ' + num
+  $('.roll-result').innerHTML = 'Rolled ' + num
   rollCount[num]++
   if (rollCount[num] === 5) {
     $('.winner').innerHTML = num + ' wins!'

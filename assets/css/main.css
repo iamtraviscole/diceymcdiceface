@@ -1,6 +1,30 @@
+body,
+input,
+textarea,
+button {
+  font-family: 'Cabin', sans-serif;
+}
+
+body {
+  background: #eee;
+}
+
+.game-container {
+  position: absolute;
+  top: 50%;
+  margin-top: -300px;
+  left: 50%;
+  margin-left: -200px;
+  width: 400px;
+  height: 565px;
+  text-align: center;
+  background: white;
+  border-radius: 5px;
+}
+
 .stack-container {
   box-sizing: border-box;
-  margin-bottom: 4px;
+  margin: 30px auto 4px auto;
   width: 200px;
   height: 166px;
 }
@@ -55,6 +79,7 @@
   width: 200px;
   height: 200px;
   perspective: 600px;
+  margin: 0 auto;
 }
 
 .die {
@@ -136,16 +161,17 @@
 .controls-container {
   font-size: 0; /* to remove default space between buttons */
   width: 200px;
-  margin-top: 25px;
+  margin: 25px auto 0 auto;
 }
 
 .controls-btn {
   width: 98px;
-  height: 35px;
+  height: 33px;
   font-size: 18px;
+  letter-spacing: .5px;
   color: white;
   background: #999;
-  padding: 0;
+  padding: 2px 0 0 0;
   margin: 0;
   border: none;
   border-radius: 3px;
@@ -160,6 +186,10 @@
 
 }
 
+.controls-btn:hover {
+  background: #333;
+}
+
 .controls-btn:focus {
   outline: 0;
 }
@@ -169,4 +199,14 @@
   border: 1px dashed #bbb;
   background: none;
   color: #bbb;
+}
+
+.roll-result {
+  margin-top: 25px;
+  color: #999;
+}
+
+.winner {
+  font-size: 34px;
+  color: #333;
 }
