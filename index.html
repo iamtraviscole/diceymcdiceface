@@ -4,65 +4,67 @@
     <meta charset="utf-8">
     <title>Dicey McDiceface</title>
     <link href="./assets/css/main.css" rel="stylesheet" >
+    <link href="./assets/css/die.css" rel="stylesheet" >
+    <link href="./assets/css/stack.css" rel="stylesheet" >
     <link href="https://fonts.googleapis.com/css?family=Cabin&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="game-container">
+    <div class="main__game-container">
 
-      <div class="game-instructions">
+      <div class="main__game-instructions">
         <p>Click roll to play.</p>
         <p>The first number rolled 5 times wins!</p>
       </div>
 
-      <div class="stack-container">
-        <div class="stack-column">
-          <div class="stack-column-inner-container stack-1">
+      <div class="stack__container">
+        <div class="stack__column">
+          <div class="stack__column-inner-container stack__col-1">
           </div>
         </div>
-        <div class="stack-column">
-          <div class="stack-column-inner-container stack-2">
+        <div class="stack__column">
+          <div class="stack__column-inner-container stack__col-2">
           </div>
         </div>
-        <div class="stack-column">
-          <div class="stack-column-inner-container stack-3">
+        <div class="stack__column">
+          <div class="stack__column-inner-container stack__col-3">
           </div>
         </div>
-        <div class="stack-column">
-          <div class="stack-column-inner-container stack-4">
+        <div class="stack__column">
+          <div class="stack__column-inner-container stack__col-4">
           </div>
         </div>
-        <div class="stack-column">
-          <div class="stack-column-inner-container stack-5">
+        <div class="stack__column">
+          <div class="stack__column-inner-container stack__col-5">
           </div>
         </div>
-        <div class="stack-column">
-          <div class="stack-column-inner-container stack-6">
+        <div class="stack__column">
+          <div class="stack__column-inner-container stack__col-6">
           </div>
         </div>
       </div>
 
-      <div class="die-scene">
-        <div class="die">
-          <div class="die-side side-1">1</div>
-          <div class="die-side side-2">2</div>
-          <div class="die-side side-3">3</div>
-          <div class="die-side side-4">4</div>
-          <div class="die-side side-5">5</div>
-          <div class="die-side side-6">6</div>
+      <div class="die__scene">
+        <div class="die__die">
+          <div class="die__side die__side-1">1</div>
+          <div class="die__side die__side-2">2</div>
+          <div class="die__side die__side-3">3</div>
+          <div class="die__side die__side-4">4</div>
+          <div class="die__side die__side-5">5</div>
+          <div class="die__side die__side-6">6</div>
         </div>
       </div>
 
-      <div class="controls-container">
-        <button class="controls-btn roll-btn" type="button">Roll</button>
-        <button class="controls-btn reset-btn" type="button">Reset</button>
+      <div class="main__controls-container">
+        <button class="main__controls-btn main__roll-btn" type="button">Roll</button>
+        <button class="main__controls-btn main__reset-btn" type="button">Reset</button>
       </div>
 
-      <div class="roll-result"></div>
-      <div class="winner"></div>
+      <div class="main__roll-result"></div>
+      <div class="main__winner"></div>
 
     </div>
 
-    <canvas id="confetti"></canvas>
+    <canvas id="main__confetti"></canvas>
 
   <script src="node_modules/confetti-js/dist/index.min.js"></script>
   <script src="./assets/js/main.js"></script>

@@ -1,0 +1,52 @@
+.stack__container {
+  box-sizing: border-box;
+  margin: 30px auto 4px auto;
+  width: 200px;
+  height: 166px;
+}
+
+.stack__column {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  width: 30px;
+  height: 166px;
+  vertical-align: bottom;
+}
+
+.stack__column-inner-container {
+  position: absolute;
+  bottom: 0;
+}
+
+.stack__die {
+  box-sizing: border-box;
+  margin-top: 4px;
+  width: 30px;
+  height: 30px;
+  border-radius: 1px;
+}
+
+.stack__die-1 {
+  background: #ff595e;
+}
+
+.stack__die-2 {
+  background: #ffCa3a;
+}
+
+.stack__die-3 {
+  background: #8ac926;
+}
+
+.stack__die-4 {
+  background: #1982c4;
+}
+
+.stack__die-5 {
+  background: #6a4c93;
+}
+
+.stack__die-6 {
+  background: #1aebcb;
+}

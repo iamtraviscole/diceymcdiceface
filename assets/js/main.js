@@ -11,7 +11,7 @@ let rollCount = {
 }
 
 const confettiSettings = {
-  'target': 'confetti',
+  'target': 'main__confetti',
   'max': '80',
   'size': '1',
   'animate': true,
@@ -28,40 +28,40 @@ const randomOneToSix = () => {
 }
 
 const showInstructions = () => {
-  if ($('.game-instructions').style.display !== 'none') {
-    $('.game-instructions').style.display = 'none'
+  if ($('.main__game-instructions').style.display !== 'none') {
+    $('.main__game-instructions').style.display = 'none'
   }
 }
 
 const handleRollResult = (num) => {
-  $('.roll-result').innerHTML = 'Rolled ' + num
+  $('.main__roll-result').innerHTML = 'Rolled ' + num
   rollCount[num]++
 }
 
 const checkWinner = (num) => {
   if (rollCount[num] === 5) {
-    $('.winner').innerHTML = num + ' wins!'
-    $('.roll-btn').disabled = true
+    $('.main__winner').innerHTML = num + ' wins!'
+    $('.main__roll-btn').disabled = true
     confetti.render()
   }
 }
 
 const rollDie = (num) => {
-  let lastClass = $('.die').classList.item(1)
+  let lastClass = $('.die__die').classList.item(1)
   if (lastClass) {
-    $('.die').classList.remove(lastClass)
+    $('.die__die').classList.remove(lastClass)
   }
 
-  $('.die').classList.add(`show-side-${num}`)
+  $('.die__die').classList.add(`die__show-side-${num}`)
 }
 
 const addDieToStack = (num) => {
-  let stackClass = $(`.stack-${num}`)
+  let stackClass = $(`.stack__col-${num}`)
   stackClass.innerHTML +=
-    `<div class="stack-die stack-die-${num}"></div>`
+    `<div class="stack__die stack__die-${num}"></div>`
 }
 
-$('.roll-btn').addEventListener('click', () => {
+$('.main__roll-btn').addEventListener('click', () => {
   let num = randomOneToSix()
 
   showInstructions()
@@ -72,25 +72,25 @@ $('.roll-btn').addEventListener('click', () => {
 })
 
 const resetDieClass = () => {
-  let lastClass = $('.die').classList.item(1)
+  let lastClass = $('.die__die').classList.item(1)
   if (lastClass) {
-    $('.die').classList.remove(lastClass)
+    $('.die__die').classList.remove(lastClass)
   }
 }
 
 const resetDieStack = () => {
-  let stackInners = $$('.stack-column-inner-container')
+  let stackInners = $$('.stack__column-inner-container')
   stackInners.forEach(container => {
     container.innerHTML = ''
   })
 }
 
 const reset = () => {
-  $('.game-instructions').style.display = ''
-  $('.roll-btn').disabled = false
-  $('.roll-result').innerHTML = ''
-  $('.winner').innerHTML = ''
-  
+  $('.main__game-instructions').style.display = ''
+  $('.main__roll-btn').disabled = false
+  $('.main__roll-result').innerHTML = ''
+  $('.main__winner').innerHTML = ''
+
   resetDieClass()
   resetDieStack()
 
@@ -107,6 +107,6 @@ const reset = () => {
   }
 }
 
-$('.reset-btn').addEventListener('click', () => {
+$('.main__reset-btn').addEventListener('click', () => {
   reset()
 })
