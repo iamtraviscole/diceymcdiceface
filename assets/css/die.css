@@ -1,4 +1,4 @@
-.die__scene {
+.die__container {
   width: 200px;
   height: 200px;
   perspective: 600px;
@@ -27,31 +27,37 @@
   border-radius: 2px;
 }
 
+/* front */
 .die__side-1 {
   transform: rotateY(0deg) translateZ(100px);
   background: #ff595e;
 }
 
+/* right */
 .die__side-2 {
   transform: rotateY(90deg) translateZ(100px);
   background: #ffCa3a;
 }
 
+/* back */
 .die__side-3 {
   transform: rotateY(180deg) translateZ(100px);
   background: #8ac926;
 }
 
+/* left */
 .die__side-4 {
   transform: rotateY(-90deg) translateZ(100px);
   background: #1982c4;
 }
 
+/* top */
 .die__side-5 {
   transform: rotateX(90deg) translateZ(100px);
   background: #6a4c93;
 }
 
+/* bottom */
 .die__side-6 {
   transform: rotateX(-90deg) translateZ(100px);
   background: #1aebcb;
