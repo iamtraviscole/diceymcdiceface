@@ -8,10 +8,15 @@
 .stack__column {
   box-sizing: border-box;
   position: relative;
-  display: inline-block;
+  float: left;
   width: 30px;
   height: 166px;
+  margin-right: 4px;
   vertical-align: bottom;
+}
+
+.stack__column:last-of-type {
+  margin-right: 0;
 }
 
 .stack__column-inner-container {
