@@ -22,6 +22,15 @@ body {
   border-radius: 5px;
 }
 
+.game-instructions {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  width: 400px;
+  color: #999;
+  text-align: center;
+}
+
 .stack-container {
   box-sizing: border-box;
   margin: 30px auto 4px auto;

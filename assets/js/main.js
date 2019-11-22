@@ -11,6 +11,7 @@ let rollCount = {
 }
 
 function reset() {
+  $('.game-instructions').style.display = ''
   $('.roll-btn').disabled = false
   $('.roll-result').innerHTML = ''
   $('.winner').innerHTML = ''
@@ -55,6 +56,9 @@ const rollDie = (num) => {
 }
 
 $('.roll-btn').addEventListener('click', () => {
+  if ($('.game-instructions').style.display !== 'none') {
+    $('.game-instructions').style.display = 'none'
+  }
   let num = randomOneToSix()
   $('.roll-result').innerHTML = 'Rolled ' + num
   rollCount[num]++
