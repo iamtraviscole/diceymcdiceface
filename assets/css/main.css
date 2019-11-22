@@ -1,3 +1,8 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
 body,
 input,
 textarea,
@@ -20,6 +25,7 @@ body {
   text-align: center;
   background: white;
   border-radius: 5px;
+  box-shadow: 0 3px 0 0 #b8e0f5;
 }
 
 .game-instructions {
@@ -107,7 +113,7 @@ body {
   height: 200px;
   line-height: 200px;
   text-align: center;
-  font-size: 24px;
+  font-size: 40px;
   color: white;
   font-weight: bold;
   border-radius: 2px;
@@ -185,6 +191,7 @@ body {
   border: none;
   border-radius: 3px;
   cursor: pointer;
+  box-shadow: 0 2px 0 0 #666;
 }
 
 .roll-btn {
@@ -197,6 +204,7 @@ body {
 
 .controls-btn:hover {
   background: #333;
+  box-shadow: 0 2px 0 0 black;
 }
 
 .controls-btn:focus {
@@ -208,6 +216,8 @@ body {
   border: 1px dashed #bbb;
   background: none;
   color: #bbb;
+  padding: 1px 0 2px 0;
+  box-shadow: none;
 }
 
 .roll-result {
@@ -218,4 +228,13 @@ body {
 .winner {
   font-size: 34px;
   color: #333;
+}
+
+#confetti {
+  box-sizing: border-box;
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  z-index: -100;
+  background: #ecf8fe;
 }

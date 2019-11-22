@@ -1,0 +1,22 @@
+{
+  "name": "diceymcdiceface",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamtraviscole/diceymcdiceface.git"
+  },
+  "author": "Travis Cole",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iamtraviscole/diceymcdiceface/issues"
+  },
+  "homepage": "https://github.com/iamtraviscole/diceymcdiceface#readme",
+  "dependencies": {
+    "confetti-js": "0.0.15"
+  }
+}

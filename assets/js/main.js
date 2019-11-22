@@ -10,6 +10,19 @@ let rollCount = {
   6: 0
 }
 
+const confettiSettings = {
+  'target': 'confetti',
+  'max': '80',
+  'size': '1',
+  'animate': true,
+  'props': ['circle','square'],
+  'colors': [[165,104,246],[230,61,135],[0,199,228],[253,214,126]],
+  'clock': '25',
+  'rotate': false
+}
+
+let confetti = new ConfettiGenerator(confettiSettings)
+
 function reset() {
   $('.game-instructions').style.display = ''
   $('.roll-btn').disabled = false
@@ -25,6 +38,9 @@ function reset() {
   stackInners.forEach(container => {
     container.innerHTML = ''
   })
+
+  confetti.clear()
+  confetti = new ConfettiGenerator(confettiSettings)
 
   rollCount = {
     1: 0,
@@ -65,6 +81,7 @@ $('.roll-btn').addEventListener('click', () => {
   if (rollCount[num] === 5) {
     $('.winner').innerHTML = num + ' wins!'
     $('.roll-btn').disabled = true
+    confetti.render()
   }
   rollDie(num)
   addDieToStack(num)
