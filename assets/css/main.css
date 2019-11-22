@@ -74,9 +74,9 @@
   line-height: 200px;
   text-align: center;
   font-size: 24px;
+  color: white;
   font-weight: bold;
-  border: 1px solid #333;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 .side-1 {
@@ -131,4 +131,42 @@
 
 .show-side-6 {
   transform: translateZ(-100px) rotateX(90deg);
+}
+
+.controls-container {
+  font-size: 0; /* to remove default space between buttons */
+  width: 200px;
+  margin-top: 25px;
+}
+
+.controls-btn {
+  width: 98px;
+  height: 35px;
+  font-size: 18px;
+  color: white;
+  background: #999;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.roll-btn {
+  margin-right: 4px;
+}
+
+.reset-btn {
+
+}
+
+.controls-btn:focus {
+  outline: 0;
+}
+
+.controls-btn:disabled {
+  cursor: not-allowed;
+  border: 1px dashed #bbb;
+  background: none;
+  color: #bbb;
 }

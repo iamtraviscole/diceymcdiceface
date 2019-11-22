@@ -11,7 +11,7 @@ let rollCount = {
 }
 
 function reset() {
-  $('.roll-button').disabled = false
+  $('.roll-btn').disabled = false
   $('.roll-result').innerHTML = ''
   $('.winner').innerHTML = ''
 
@@ -41,7 +41,6 @@ const randomOneToSix = () => {
 
 const addDieToStack = (num) => {
   let stackClass = $(`.stack-${num}`)
-  console.log(stackClass)
   stackClass.innerHTML +=
     `<div class="stack-die stack-die-${num}"></div>`
 }
@@ -55,18 +54,18 @@ const rollDie = (num) => {
   $('.die').classList.add(`show-side-${num}`)
 }
 
-$('.roll-button').addEventListener('click', () => {
+$('.roll-btn').addEventListener('click', () => {
   let num = randomOneToSix()
   $('.roll-result').innerHTML = 'rolled ' + num
   rollCount[num]++
   if (rollCount[num] === 5) {
     $('.winner').innerHTML = num + ' wins!'
-    $('.roll-button').disabled = true
+    $('.roll-btn').disabled = true
   }
   rollDie(num)
   addDieToStack(num)
 })
 
-$('.reset-button').addEventListener('click', () => {
+$('.reset-btn').addEventListener('click', () => {
   reset()
 })
