@@ -63,6 +63,7 @@
   background: #1aebcb;
 }
 
+/* spins die to appropriate side */
 .die__show-side-1 {
   transform: translateZ(-100px) rotateY(0deg);
 }
@@ -85,4 +86,30 @@
 
 .die__show-side-6 {
   transform: translateZ(-100px) rotateX(90deg);
+}
+
+/* spins die backwards a full turn */
+/* used when same number is rolled multiple times in a row */
+.die__show-side-1--back {
+  transform: translateZ(-100px) rotateY(360deg);
+}
+
+.die__show-side-2--back {
+  transform: translateZ(-100px) rotateY(270deg);
+}
+
+.die__show-side-3--back {
+  transform: translateZ(-100px) rotateY(180deg);
+}
+
+.die__show-side-4--back {
+  transform: translateZ(-100px) rotateY(-270deg);
+}
+
+.die__show-side-5--back {
+  transform: translateZ(-100px) rotateX(270deg);
+}
+
+.die__show-side-6--back {
+  transform: translateZ(-100px) rotateX(-270deg);
 }

@@ -46,13 +46,31 @@ const checkWinner = (num) => {
   }
 }
 
-const rollDie = (num) => {
-  let lastClass = $('.die__die').classList.item(1)
-  if (lastClass) {
-    $('.die__die').classList.remove(lastClass)
+// Spins die 360 degrees if same number is rolled multiple
+// times in a row. Die would just sit there on same number otherwise
+const handleSpinBack = (num, showClass) => {
+  let spinClass
+
+  if (showClass === `die__show-side-${num}`) {
+    spinClass = `die__show-side-${num}--back`
+  } else if (showClass === `die__show-side-${num}--back`) {
+    spinClass = `die__show-side-${num}`
   }
 
-  $('.die__die').classList.add(`die__show-side-${num}`)
+  $('.die__die').classList.add(spinClass)
+}
+
+const rollDie = (num) => {
+  let showClass = $('.die__die').classList.item(1)
+
+  $('.die__die').classList.remove(showClass)
+
+  if (showClass === `die__show-side-${num}` ||
+      showClass === `die__show-side-${num}--back`) {
+    handleSpinBack(num, showClass)
+  } else {
+    $('.die__die').classList.add(`die__show-side-${num}`)
+  }
 }
 
 const addDieToStack = (num) => {
@@ -71,13 +89,6 @@ $('.main__roll-btn').addEventListener('click', () => {
   addDieToStack(num)
 })
 
-const resetDieClass = () => {
-  let lastClass = $('.die__die').classList.item(1)
-  if (lastClass) {
-    $('.die__die').classList.remove(lastClass)
-  }
-}
-
 const resetDieStack = () => {
   let stackInners = $$('.stack__column-inner-container')
   stackInners.forEach(container => {
@@ -90,8 +101,8 @@ const reset = () => {
   $('.main__roll-btn').disabled = false
   $('.main__roll-result').innerHTML = ''
   $('.main__winner').innerHTML = ''
+  $('.die__die').className = 'die__die die__show-side-1'
 
-  resetDieClass()
   resetDieStack()
 
   confetti.clear()
